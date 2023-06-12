@@ -1,7 +1,8 @@
 # Syncronization과 관련된 3가지 문제
 
 ## 1. Bounded-Buffer Problem (Producer-Consumer Problem)
-<img src="./resource/boundbuffer.png"/>
+<img src="./resource/boundbuffer.png" height="400px"/>
+
 - Producer(생산자) process 여러개와 Consumer(소비자) process 여러개가 있다.
 - 생산자는 공유 버퍼에 데이터를 생성해서 집어넣는 역할. 소비자는 버퍼에서 자원을 꺼내가는 역할.
 - 생산자 입장에선 버퍼의 빈 공간이 자원, 소비자 입장에선 버퍼의 데이터가 들어있는 공간이 자원
@@ -46,6 +47,7 @@ Read process들과 Write process 들로 두 종류의 프로세스가 있다.
 
 ### Logic
 <img src="./resource/writer-readercode.png"/>
+
 **Writer**
 - DB는 데이터 그 자체이고, db는 DB에 대한 semaphore에 해당
 - P(db) : 공유 데이터에 lock을 걸어 다른 프로세스가 접근 못하게 하기
@@ -68,6 +70,7 @@ Read process들과 Write process 들로 두 종류의 프로세스가 있다.
 - 4명의 철학자만이 테이블에 동시에 앉을 수 있도록 한다.
 - 젓가락을 두 개 모두 집을 수 있을 때에만 젓가락을 집을 수 있게 한다.(아래 로직은 semaphore 초기값이 0으로 헷갈릴 수 있다.)
 <img src="./resource/philosophers problem.png"/>
+
 - 비대칭 : 짝수(홀수) 철학자는 왼쪽(오른쪽) 젓가락부터 집도록 한다.(젓가락의 우선순위 부여)
 ##  Monitor
 ### Semaphore의 문제점
@@ -93,7 +96,9 @@ Read process들과 Write process 들로 두 종류의 프로세스가 있다.
 
 ### Bounded-Buffer Problem
 아까 위에서 봤던 생산자-소비자 문제의 semaphore 코드를 monitor 코드로 변환한 것
+
 <img src="./resource/monitor.png"/>
+
 - 공유 버퍼가 모니터 안에 정의되어 있음
 - 생산자, 소비자 함수가 모니터 내부에 정의되어 있다.
 - signal 연산이 하는 역할은 대기 중인 프로세스를 깨워주는 역할
