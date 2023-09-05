@@ -21,7 +21,7 @@ int solution(vector<vector<int>> board, vector<vector<int>> skill) {
     for (int i = 1; i < n; i++)
     {
         for (int j = 0; j < m; j++)
-        {
+        { 
             //오른쪽으로 밀기
             sum[i][j] += sum[i - 1][j];
         }
