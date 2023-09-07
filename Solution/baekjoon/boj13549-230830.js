@@ -15,8 +15,7 @@ let [n, k] = fs.readFileSync("/dev/stdin")
   .trim()
   .split(" ")
   .map(Number)
-// let n = 5
-// let k = 17
+
 let count = 0
 let dp = Array(MAXNUM + 1).fill(MAXTIME)
 dp[n] = 0
